@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import { MongoClient } from 'mongodb';
 
 import MeetupList from "../components/meetups/MeetupList";
@@ -5,12 +6,19 @@ import MeetupList from "../components/meetups/MeetupList";
 function HomePage(props) {
     return (
         <>
-
+            <Head>
+                <title>React meetups</title>
+                <meta
+                    name="description"
+                    content="Browse a huge list of highly active React meetups!"
+                />
+            </Head>
             <MeetupList meetups={props.meetups} />
 
         </>
     )
 }
+
 
 // export async function getStaticProps(context) {
 //     const req = context.req;
